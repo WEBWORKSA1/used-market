@@ -9,6 +9,7 @@
     var q = UM.param("q"); if (q) { form.q.value = q; run(); } else renderList(DATA.slice(0, 8), "Latest recalls");
   }).catch(function () { meta.textContent = "Searching the official database directly."; });
   form.addEventListener("submit", function (e) { e.preventDefault(); run(); });
+  function cut(t) { t = String(t || "").replace(/\s+/g, " "); var f = t.split(/(?<=[.!?])\s/)[0]; return f.length > 170 ? f.slice(0, 168).replace(/\s+\S*$/, "") + "…" : f; }
   function norm(s) { return String(s || "").toLowerCase(); }
   function run() {
     var q = norm(form.q.value).trim(); if (q.length < 2) return;
@@ -31,7 +32,7 @@
   }
   function renderList(items, label) {
     out.innerHTML = '<p class="small muted">' + UM.esc(label) + "</p>" + items.map(function (r) {
-      return '<div class="card recall mt1"><div class="small muted">' + UM.esc(r.date || "") + (r.hazards && r.hazards.length ? " · Hazard: " + UM.esc(r.hazards.join(", ")) : "") + "</div><h4 class='mt0'>" + (r.url ? '<a href="' + UM.esc(r.url) + '" target="_blank" rel="noopener">' + UM.esc(r.title) + "</a>" : UM.esc(r.title)) + "</h4>" + (r.remedy ? '<p class="small mb0"><strong>Remedy:</strong> ' + UM.esc(r.remedy) + "</p>" : "") + "</div>";
+      return '<div class="card recall mt1"><div class="small muted">' + UM.esc(r.date || "") + (r.hazards && r.hazards.length ? " · Hazard: " + UM.esc(cut(r.hazards[0])) : "") + "</div><h4 class='mt0'>" + (r.url ? '<a href="' + UM.esc(r.url) + '" target="_blank" rel="noopener">' + UM.esc(r.title) + "</a>" : UM.esc(r.title)) + "</h4>" + (r.remedy ? '<p class="small mb0"><strong>Remedy:</strong> ' + UM.esc(r.remedy) + "</p>" : "") + "</div>";
     }).join("");
   }
 })();

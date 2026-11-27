@@ -7,6 +7,7 @@ failure the existing data is kept, so the site never goes blank.
 import datetime as dt
 import email.utils
 import json
+import re
 import os
 import urllib.parse
 import urllib.request
@@ -37,6 +38,12 @@ def load(name):
         return {"items": []}
 
 
+def short(t, n=170):
+    t = " ".join((t or "").split())
+    first = re.split(r"(?<=[.!?])\s", t, maxsplit=1)[0]
+    return first if len(first) <= n else first[: n - 1].rsplit(" ", 1)[0] + "…"
+
+
 def refresh_recalls():
     start = (TODAY - dt.timedelta(days=150)).isoformat()
     url = "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallDateStart=" + start
@@ -54,7 +61,7 @@ def refresh_recalls():
             "title": title,
             "date": (r.get("RecallDate") or "")[:10],
             "url": r.get("URL") or "https://www.cpsc.gov/Recalls",
-            "hazards": [h.get("Name", "") for h in (r.get("Hazards") or []) if h.get("Name")][:3],
+            "hazards": [short(h.get("Name", "")) for h in (r.get("Hazards") or []) if h.get("Name")][:2],
             "remedy": " ".join(x.get("Name", "") for x in (r.get("Remedies") or []))[:300],
             "products": [p.get("Name", "") for p in (r.get("Products") or []) if p.get("Name")][:5],
             "brands": [m.get("Name", "") for m in (r.get("Manufacturers") or []) if m.get("Name")][:3],
@@ -69,7 +76,8 @@ def refresh_recalls():
     return True
 
 
-QUERIES = ["resale market secondhand", "second-hand shopping trend", "online marketplace scam", "used car prices", "refurbished electronics", "product recall consumer"]
+QUERIES = ['"resale" secondhand market', '"thrift" OR "secondhand" shopping', '"marketplace scam"', '"used car" prices', '"refurbished" phones OR laptops', 'CPSC recall', '"pre-owned" luxury resale']
+KEYWORDS = re.compile(r"resale|resell|second-?hand|used|thrift|refurb|recall|marketplace|scam|consign|vintage|pre-?owned|circular|flip|trade-?in", re.I)
 
 
 def refresh_news():
@@ -88,7 +96,7 @@ def refresh_news():
             if source and title.endswith(" - " + source):
                 title = title[: -len(" - " + source)]
             key = title.lower()[:90]
-            if not title or key in seen:
+            if not title or key in seen or not KEYWORDS.search(title):
                 continue
             seen.add(key)
             try:

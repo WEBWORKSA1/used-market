@@ -10,7 +10,7 @@ Use the prompts below in order. Each phase is self-contained and ends with an ac
 
 > You are building **Used.Market** (domain `used.market`), a modern, fast, fully static website (HTML/CSS/vanilla JS, no server, no database) that is hosted free on GitHub Pages from the `main` branch of `github.com/WEBWORKSA1/used-market`.
 > Non-negotiables on **every** page:
-> 1. A slim top bar reading exactly "Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership", linked to `https://web.works/contact` (new tab). The text `web.works` must never be displayed.
+> 1. A slim top bar reading exactly "Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership", linked to the owner's contact URL (set in `_build/build.py`, opens in a new tab). The destination domain must never be displayed as text.
 > 2. Google AdSense in `<head>`: `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>` plus `<meta name="google-adsense-account" content="ca-pub-6620975821265271">`. Root `ads.txt`: `google.com, pub-6620975821265271, DIRECT, f08c47fec0942fa0`.
 > 3. One inbox for every form, inquiry and donation: the owner's private inbox. It must never appear in HTML, visible text, `mailto:` links or plain strings. Store it encoded in `assets/js/config.js` and assemble the FormSubmit endpoint and PayPal donate URL at runtime only.
 > 4. Relative links everywhere so the site works at `webworksa1.github.io/used-market/` and later at `https://used.market/`.

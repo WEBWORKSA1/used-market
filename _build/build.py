@@ -380,13 +380,19 @@ def directory_page():
                   "body": body, "crumbs": [], "crumb": "Marketplaces", "scripts": ["tools/common.js", "tools/directory.js"], "section": "marketplaces", "keywords": "marketplace directory platforms compare", "priority": "0.9"})
 
 
+def trunc(t, n=170):
+    t = " ".join((t or "").split())
+    first = re.split(r"(?<=[.!?])\s", t, maxsplit=1)[0]
+    return first if len(first) <= n else first[: n - 1].rsplit(" ", 1)[0] + "…"
+
+
 def news_page():
     news = load("news.json")
     rec = load("recalls.json")
     ni = news.get("items", [])[:40]
     ri = rec.get("items", [])[:24]
     nhtml = "".join('<div class="news-item"><div><div class="src">%s · %s</div><a href="%s" target="_blank" rel="noopener nofollow">%s</a></div></div>' % (H(x.get("source", "")), H(x.get("date", "")), H(x.get("url", "#")), H(x.get("title", ""))) for x in ni) or '<p class="muted">Headlines refresh automatically every day.</p>'
-    rhtml = "".join('<div class="card recall mt1"><div class="small muted">%s%s</div><h4 class="mt0"><a href="%s" target="_blank" rel="noopener">%s</a></h4>%s</div>' % (H(x.get("date", "")), (" · Hazard: " + H(", ".join(x.get("hazards", [])))) if x.get("hazards") else "", H(x.get("url", "#")), H(x.get("title", "")), ('<p class="small mb0"><strong>Remedy:</strong> %s</p>' % H(x["remedy"])) if x.get("remedy") else "") for x in ri) or '<p class="muted">Recall data refreshes automatically every day from the U.S. Consumer Product Safety Commission.</p>'
+    rhtml = "".join('<div class="card recall mt1"><div class="small muted">%s%s</div><h4 class="mt0"><a href="%s" target="_blank" rel="noopener">%s</a></h4>%s</div>' % (H(x.get("date", "")), (" · Hazard: " + H(trunc(x["hazards"][0]))) if x.get("hazards") else "", H(x.get("url", "#")), H(x.get("title", "")), ('<p class="small mb0"><strong>Remedy:</strong> %s</p>' % H(x["remedy"])) if x.get("remedy") else "") for x in ri) or '<p class="muted">Recall data refreshes automatically every day from the U.S. Consumer Product Safety Commission.</p>'
     body = """<section class="hero" style="padding-bottom:24px"><div class="container">{{CRUMBS}}<span class="tag coral">Auto-updated daily</span><h1 class="mt1">Resale news &amp; product recalls</h1><p class="lede">Second-hand market headlines and the latest consumer product recalls — refreshed automatically every day. Last refresh: <strong>%(nu)s</strong>.</p></div></section>
 <section style="padding-top:0"><div class="container"><div class="layout"><div>
 <h2>Latest product recalls</h2><p class="small muted">Source: U.S. Consumer Product Safety Commission. Before buying used baby gear, e-bikes, heaters or appliances, search the model in our <a href="{{R}}tools/recall-check/">Recall Checker</a>.</p>%(r)s
