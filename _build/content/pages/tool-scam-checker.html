@@ -1,0 +1,25 @@
+<!--
+{"path":"tools/scam-checker/","title":"Marketplace Scam Checker: Is This Buyer or Seller a Scam?","description":"Paste a message from a buyer or seller and get an instant risk score with the exact red flags — overpayment, gift cards, verification codes, fake payment emails and more.","crumbs":[["Tools","tools/"]],"crumb":"Scam Message Checker","tool":"scam-checker","scripts":["tools/scam-checker.js"],"priority":"0.9","keywords":"is this a scam facebook marketplace scam checker buyer seller","faq":[["Is my message stored or sent anywhere?","No. The checker runs entirely in your browser using pattern rules. Nothing you paste is uploaded to Used.Market or anyone else."],["Can it prove a message is safe?","No tool can. A low score means none of the common patterns matched. Scammers adapt, so keep deals on-platform, inspect before paying and trust your instincts."],["What are the most common marketplace scams?","Overpayment with a fake cheque or payment, requests for verification codes, fake 'upgrade your account to receive payment' emails, deposits for items that don't exist, gift-card payments and 'my shipper will collect' schemes. Our guide explains each one."],["Where should I report a scam?","Report the profile on the marketplace first. In the United States, report to the Federal Trade Commission at ReportFraud.ftc.gov; in Canada to the Canadian Anti-Fraud Centre; in the United Kingdom to Action Fraud. If you lost money, call your bank immediately."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag coral">Free tool · private</span><h1 class="mt1">Is this message a scam?</h1><p class="lede">Paste what the buyer or seller wrote. You'll get a risk score and the exact warning signs — checked privately, right in your browser.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="scam-form">
+    <h2>Paste the message</h2>
+    <div class="field"><label for="s-msg">Message text</label><textarea id="s-msg" name="message" rows="9" placeholder="Paste the full message here…"></textarea></div>
+    <button class="btn btn-coral btn-block" type="submit">Check for scam signs</button>
+    <p class="small mt2 mb0">Try an example:</p>
+    <div class="chips mt1"><button class="chip" type="button" data-sample="a">Overpayment + shipper</button><button class="chip" type="button" data-sample="b">Verification-code scam</button><button class="chip" type="button" data-sample="c">Normal buyer</button></div>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Result</h2><div id="scam-results"><div class="result-empty">Results appear here. Your text never leaves this page.</div></div></div>
+</div>
+{{AD}}
+<div class="layout mt3"><div class="prose">
+<h2>What the checker looks for</h2>
+<p>Marketplace scams are repetitive. The same scripts show up on every platform, in every country, because they work. Safety teams and regulators — from the classifieds sites' own help centres to national consumer agencies — describe the same handful of patterns. The checker tests your message against 24 of them, weighted by how strongly each predicts fraud:</p>
+<ul><li><strong>Irreversible payment</strong>: gift cards, wires, crypto and money orders.</li><li><strong>Fake money</strong>: cashier's cheques, overpayments and "refund the difference".</li><li><strong>Account takeover</strong>: requests for verification codes, card details or bank logins.</li><li><strong>Fake confirmations</strong>: emails claiming payment is "pending" until you upgrade an account or pay a fee.</li><li><strong>Distance</strong>: overseas, deployed or "my shipper will collect", and refusals to inspect.</li><li><strong>Pressure</strong>: urgency, deposits to hold, links and QR codes.</li></ul>
+<div class="callout tip"><h4>The one rule that stops most scams</h4><p class="mb0">Keep the conversation and the payment inside the platform — or meet in person, inspect, and pay or get paid on the spot. Almost every scam tries to break one of those two things.</p></div>
+<p>Want the full playbook? Read <a href="{{R}}guides/online-marketplace-scams/">The 12 marketplace scams and how to beat them</a>.</p>
+{{FAQ}}
+</div><aside class="sidebar"><div class="side-card"><h4>Stay safe</h4><ul><li><a href="{{R}}tools/meetup-planner/">🤝 Safe meetup planner</a></li><li><a href="{{R}}guides/safe-payment-methods/">📘 Safest ways to pay</a></li><li><a href="{{R}}guides/online-marketplace-scams/">📘 12 common scams</a></li></ul></div>{{AD_SIDE}}</aside></div>
+</div></section>

@@ -1,0 +1,15 @@
+<!--
+{"path":"tools/declutter-cash/","title":"Declutter Cash Calculator: Is It Worth Selling?","description":"List the things you want to get rid of and see the total cash, the time it will take and your effective hourly rate — so you know what to sell, bundle or donate.","crumbs":[["Tools","tools/"]],"crumb":"Declutter Cash Calculator","tool":"declutter-cash","scripts":["tools/more-tools.js"],"priority":"0.7","keywords":"declutter calculator is it worth selling garage sale estate cleanout","faq":[["How are time estimates calculated?","Typical active minutes per item: about 35 for a local sale (photos, listing, messages, meetup), 45 when you ship, 15 for an instant offer and 10 to donate."],["What should I do with items below my hourly rate?","Bundle similar items into lots, switch to an instant-offer service, or donate them. For a whole house, an estate-sale or cleanout company may be the best use of your time — request offers below."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Declutter cash calculator</h1><p class="lede">Is it worth selling? Add your items, pick a channel for each, and see your total cash, time and effective hourly rate.</p></div></section>
+<section style="padding-top:0"><div class="container" id="dc-app">
+<div class="panel">
+  <div class="row"><div class="field"><label for="dc-rate">What's an hour of your time worth? ($)</label><input id="dc-rate" type="number" min="0" value="25"></div><div></div></div>
+  <div class="table-wrap"><table><thead><tr><th>Item</th><th>Est. value ($)</th><th>Channel</th><th class="num">You get</th><th></th></tr></thead><tbody id="dc-rows"></tbody></table></div>
+  <button class="btn btn-sm btn-ghost mt1" type="button" id="dc-add">+ Add item</button>
+  <div id="dc-summary" class="mt2" aria-live="polite"></div>
+</div>
+{{AD}}
+<div class="prose narrow mt3"><h2>Selling a lot at once?</h2><p>Whole-room and whole-house clear-outs change the maths. Estate-sale companies, consignment shops and bulk buyers will often make a single offer for everything, and some include removal. If your list is long, <a href="{{R}}sell/?type=estate#get-offers">request bulk offers</a> and compare them with the total above.</p>{{FAQ}}</div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>

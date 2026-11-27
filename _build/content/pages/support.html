@@ -1,0 +1,49 @@
+<!--
+{"path":"support/","title":"Support Used.Market — Keep the Tools Free & Independent","description":"Donate to keep Used.Market's free resale tools independent. Support funds operations, promotion and marketing, hiring talent, and community contests and prizes.","crumbs":[],"crumb":"Support us","section":"support","priority":"0.6","keywords":"donate support used.market","faq":[["Is my donation tax-deductible?","No. Used.Market is an independent publisher, not a registered charity, so donations aren't tax-deductible."],["How is the money used?","Operations (hosting, data, tools), promotion and marketing, hiring writers, researchers and video creators, and funding community contest prizes. We publish a short annual summary."],["Can I cancel a monthly donation?","Yes, anytime, from your payment account. Monthly support is processed by the payment provider; we never see your card details."],["Can I support without money?","Absolutely: share a tool with a friend, report an outdated fee, or enter a contest. You can also pledge support below."]]}
+-->
+<section class="hero" style="padding-bottom:28px"><div class="container hero-grid">
+  <div>{{CRUMBS}}<span class="tag coral">Reader-supported</span><h1 class="mt1">Keep it free. Keep it independent.</h1><p class="lede">Used.Market doesn't sell your data or rank platforms for money. Advertising covers part of the bill; readers like you cover the rest — and help us build more tools, hire talent and fund community prizes.</p>
+    <div class="alloc mt2" aria-label="How support is used">
+      <div class="a"><span>Operations &amp; data</span><div class="bar"><i style="width:35%"></i></div><b>35%</b></div>
+      <div class="a"><span>Promotion &amp; marketing</span><div class="bar"><i style="width:25%"></i></div><b>25%</b></div>
+      <div class="a"><span>Hiring talent</span><div class="bar"><i style="width:25%"></i></div><b>25%</b></div>
+      <div class="a"><span>Contests &amp; prizes</span><div class="bar"><i style="width:15%"></i></div><b>15%</b></div>
+    </div>
+  </div>
+  <form class="panel" id="donate-form" onsubmit="return false">
+    <h2>Choose an amount</h2>
+    <div class="tiers">
+      <label class="tier"><input type="radio" name="amount" value="5"><span><b>$5</b>Coffee</span></label>
+      <label class="tier"><input type="radio" name="amount" value="15" checked><span><b>$15</b>Supporter</span></label>
+      <label class="tier"><input type="radio" name="amount" value="50"><span><b>$50</b>Champion</span></label>
+      <label class="tier"><input type="radio" name="amount" value="150"><span><b>$150</b>Patron</span></label>
+    </div>
+    <div class="field mt2"><label for="d-custom">Or enter an amount (USD)</label><input id="d-custom" name="custom_amount" type="number" min="1" step="1" placeholder="Custom amount"></div>
+    <div class="grid g2"><button class="btn btn-coral" type="button" data-donate="once">Give once</button><button class="btn" type="button" data-donate="monthly">Give monthly</button></div>
+    <p class="hint mt1">Secure checkout by PayPal (cards accepted). Opens in a new tab.</p>
+  </form>
+</div></section>
+
+<section class="band"><div class="container">
+  <div class="section-head"><div><span class="kicker">What your support builds</span><h2 class="mb0">Where the money goes</h2></div></div>
+  <div class="grid g4">
+    <div class="card"><div class="ico">🛠</div><h4>Operations</h4><p class="small mb0">Hosting, daily recall and news refreshes, fee research and new tools.</p></div>
+    <div class="card"><div class="ico y">📣</div><h4>Promotion &amp; marketing</h4><p class="small mb0">Getting scam and recall warnings in front of people before they lose money.</p></div>
+    <div class="card"><div class="ico c">🧑‍💻</div><h4>Hiring talent</h4><p class="small mb0">Writers, fee researchers, translators and video creators. <a href="{{R}}careers/">Open roles</a>.</p></div>
+    <div class="card"><div class="ico">🏆</div><h4>Contests &amp; prizes</h4><p class="small mb0">Monthly community challenges with cash prizes. <a href="{{R}}contests/">This month's contest</a>.</p></div>
+  </div>
+</div></section>
+
+<section><div class="container narrow">
+  <h2>Pledge support or sponsor a prize</h2>
+  <p>Prefer an invoice, a bank transfer, a company match or to sponsor a contest prize? Pledge here and we'll follow up.</p>
+  <form class="panel js-form" data-kind="donation-pledge" data-subject="Used.Market — Donation pledge / prize sponsorship" data-success="Thank you! We'll follow up with the details within two business days.">
+    <div class="row"><div class="field"><label for="pl-name">Name</label><input id="pl-name" name="name" type="text" required></div><div class="field"><label for="pl-email">Email</label><input id="pl-email" name="email" type="email" required></div></div>
+    <div class="row"><div class="field"><label for="pl-type">Type</label><select id="pl-type" name="pledge_type"><option>One-time donation</option><option>Monthly donation</option><option>Sponsor a contest prize</option><option>Company match</option></select></div><div class="field"><label for="pl-amt">Amount (USD)</label><input id="pl-amt" name="amount" type="number" min="1"></div></div>
+    <div class="field"><label for="pl-note">Note (optional)</label><textarea id="pl-note" name="note" rows="3"></textarea></div>
+    <label class="check"><input type="checkbox" name="public_thanks" value="yes"> You may thank me publicly by name.</label>
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn btn-coral mt1" type="submit">Send pledge</button>
+  </form>
+  {{FAQ}}
+</div></section>

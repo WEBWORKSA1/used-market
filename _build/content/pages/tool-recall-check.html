@@ -1,0 +1,25 @@
+<!--
+{"path":"tools/recall-check/","title":"Recall Checker: Search Product Recalls Before You Buy Used","description":"Search recent consumer product recalls by product, brand or hazard before buying used strollers, cribs, e-bikes, heaters, appliances and toys. Updated daily.","crumbs":[["Tools","tools/"]],"crumb":"Recall Checker","tool":"recall-check","scripts":["tools/recall-check.js"],"priority":"0.9","changefreq":"daily","keywords":"recall check product recall search used stroller crib e-bike","faq":[["Where does the recall data come from?","Our dataset is refreshed automatically every day from the U.S. Consumer Product Safety Commission's public recall data. If your search finds nothing in our recent dataset, the tool queries the official database directly and links to recall sites in Canada, the U.K., the EU and for vehicles."],["Is it legal to sell a recalled product?","In the United States it is illegal to sell a product that has been recalled by the CPSC, including second-hand. Many other countries have similar rules. If you own a recalled item, follow the remedy — refund, repair or replacement — instead of selling it."],["What should I check most carefully?","Anything for babies and children (cribs, sleepers, strollers, car seats, toys), e-bike and e-scooter batteries, space heaters, helmets and appliances. Search by exact model number when you can."],["Does 'no match' mean it's safe?","Not necessarily. It means no recall matched your search terms. Search the exact model number, check the manufacturer's site, and inspect the item for damage."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag coral">Free tool · updated daily</span><h1 class="mt1">Recall checker</h1><p class="lede">Before you buy used baby gear, an e-bike, a heater or an appliance, check it hasn't been recalled. Search by product, brand, model or hazard.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="recall-form">
+    <h2>Search recalls</h2>
+    <div class="field"><label for="rc-q">Product, brand or model</label><input id="rc-q" name="q" type="search" placeholder="e.g. stroller, bassinet, e-bike battery, space heater" required></div>
+    <button class="btn btn-coral btn-block" type="submit">Search recalls</button>
+    <p class="small muted mt1" id="recall-meta">Loading recall data…</p>
+    <div class="chips mt1"><a class="chip" href="?q=bassinet">bassinet</a><a class="chip" href="?q=battery">battery</a><a class="chip" href="?q=helmet">helmet</a><a class="chip" href="?q=heater">heater</a><a class="chip" href="?q=toy">toy</a><a class="chip" href="?q=dresser">dresser</a></div>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Results</h2><div id="recall-results"><div class="result-empty">Latest recalls will appear here.</div></div></div>
+</div>
+{{AD}}
+<div class="layout mt3"><div class="prose">
+<h2>Why recalls matter more when you buy used</h2>
+<p>New products are pulled from shelves when they're recalled. Used products aren't — they keep circulating on marketplaces, at garage sales and in hand-me-down bags. Regulators publish recalls precisely so owners and buyers can act, and safety-minded marketplaces tell buyers to check recall lists before high-risk purchases like heaters, e-bikes and baby equipment.</p>
+<h3>How to search effectively</h3>
+<ol><li>Find the <strong>model number</strong> and manufacture date on the label — under a crib, on a stroller frame, on an appliance's rating plate, on an e-bike battery.</li><li>Search the model number first, then the brand plus product type.</li><li>If nothing matches, check the manufacturer's website and the official databases linked in the results.</li><li>Inspect anyway: damage, missing parts and modifications can make an un-recalled product dangerous.</li></ol>
+<div class="callout warn"><h4>High-risk second-hand categories</h4><p class="mb0">Infant sleep products and cribs, car seats, strollers, children's toys with small parts or button batteries, helmets, lithium-ion batteries (e-bikes, scooters, power tools), space heaters, and gas appliances.</p></div>
+{{FAQ}}
+</div><aside class="sidebar"><div class="side-card"><h4>Related</h4><ul><li><a href="{{R}}guides/used-baby-gear-safety/">📘 Used baby gear safety</a></li><li><a href="{{R}}guides/e-bike-battery-safety/">📘 Used e-bike batteries</a></li><li><a href="{{R}}news/">⚠️ Latest recalls</a></li></ul></div>{{AD_SIDE}}</aside></div>
+</div></section>

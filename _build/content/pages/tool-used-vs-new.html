@@ -1,0 +1,19 @@
+<!--
+{"path":"tools/used-vs-new/","title":"Buy Used or New? Total Cost-per-Year Calculator","description":"Compare buying used vs new on what actually matters: cost per year of use after resale value, expected lifespan and repair risk.","crumbs":[["Tools","tools/"]],"crumb":"Buy Used vs New","tool":"used-vs-new","scripts":["tools/more-tools.js"],"priority":"0.7","keywords":"buy used or new calculator cost per year refurbished","faq":[["When is new better than used?","When the used discount is small, the item wears out quickly, repairs are expensive, or a long warranty matters. Batteries, mattresses and safety gear often fall into this group."],["What about refurbished?","Professionally refurbished items with a warranty sit between the two: a smaller discount than private-sale used, but lower risk. Enter the refurbished price as 'used' and lower the repair risk."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Buy used or new?</h1><p class="lede">The sticker price is the wrong comparison. Compare cost per year of use — after resale value, lifespan and the risk of repairs.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="uv-form">
+    <h2>The two options</h2>
+    <div class="row"><div class="field"><label for="uv-np">New price ($)</label><input id="uv-np" name="new_price" type="number" min="0" value="1000"></div><div class="field"><label for="uv-up">Used price ($)</label><input id="uv-up" name="used_price" type="number" min="0" value="600"></div></div>
+    <div class="row"><div class="field"><label for="uv-y">Years you'd keep a new one</label><input id="uv-y" name="years" type="number" min="0.5" step="0.5" value="4"></div><div class="field"><label for="uv-l">Used lifespan vs new (%)</label><input id="uv-l" name="used_life" type="number" min="10" max="100" value="70"></div></div>
+    <div class="row"><div class="field"><label for="uv-r">Chance used needs a repair (%)</label><input id="uv-r" name="risk" type="number" min="0" max="100" value="25"></div><div class="field"><label for="uv-rc">Typical repair cost ($)</label><input id="uv-rc" name="repair" type="number" min="0" value="150"></div></div>
+    <div class="row"><div class="field"><label for="uv-rn">Resale value of new at the end (%)</label><input id="uv-rn" name="resale_new" type="number" min="0" max="100" value="30"></div><div class="field"><label for="uv-ru">Resale value of used at the end (%)</label><input id="uv-ru" name="resale_used" type="number" min="0" max="100" value="20"></div></div>
+    <button class="btn btn-coral btn-block" type="submit">Compare</button>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Result</h2><div id="uv-results"><div class="result-empty">Adjust the numbers and press Compare.</div></div></div>
+</div>
+{{AD}}
+<div class="prose narrow mt3"><h2>How to fill this in</h2><p>Use the <a href="{{R}}tools/value-estimator/">Value Estimator</a> to sanity-check resale percentages. For phones and laptops, used lifespan is mostly about battery and software support; for furniture and instruments, used items often last as long as new ones. Repair risk is lower for refurbished items with a warranty.</p>{{FAQ}}</div>
+</div></section>

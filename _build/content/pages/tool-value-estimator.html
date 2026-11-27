@@ -1,0 +1,35 @@
+<!--
+{"path":"tools/value-estimator/","title":"What's My Used Item Worth? Free Used Value Estimator","description":"Estimate a fair resale range, a smart list price and a quick-sale price for used phones, laptops, cars, furniture, luxury goods, instruments and more.","crumbs":[["Tools","tools/"]],"crumb":"Used Value Estimator","tool":"value-estimator","scripts":["tools/value-estimator.js"],"priority":"0.9","keywords":"what is my used worth resale value depreciation estimator","faq":[["How accurate is the estimate?","It's a transparent starting point based on typical depreciation for the category, adjusted for age, condition, brand tier, demand and what's included. Real prices vary by model, colour, size, season and location, so always confirm against three to five recent sold listings of the same model."],["Why does condition matter so much?","Buyers discount heavily for uncertainty. Moving from 'Good' to 'Excellent' typically adds 15–20% because buyers expect fewer surprises. Honest, detailed photos are the cheapest way to earn a higher grade."],["Do items with the original box sell for more?","Usually, yes — especially electronics, watches, designer goods and collectibles. Complete sets signal care and make resale easier for the next owner. The estimator adds a modest premium for box, accessories and proof of purchase."],["Some things go up in value. Does the estimator handle that?","Collectibles, some luxury pieces and quality instruments can hold or gain value. The model uses gentle curves and high floors for those categories, but for rare items you should research realized auction prices."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">What's my used item worth?</h1><p class="lede">A transparent resale estimate: fair range, smart list price and quick-sale price — with the maths shown, not hidden.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="value-form">
+    <h2>About the item</h2>
+    <div class="field"><label for="v-cat">Category</label><select id="v-cat" name="category" required></select></div>
+    <div class="row"><div class="field"><label for="v-new">Price when new ($)</label><input id="v-new" name="new_price" type="number" min="1" step="1" placeholder="e.g. 999" required></div>
+    <div class="field"><label for="v-age">Age (years)</label><input id="v-age" name="age" type="number" min="0" max="60" step="0.5" value="2"></div></div>
+    <div class="field"><label for="v-cond">Condition</label><select id="v-cond" name="condition"><option value="nwt">New / sealed</option><option value="likenew">Like new</option><option value="excellent">Excellent</option><option value="good" selected>Good</option><option value="fair">Fair</option><option value="parts">For parts / not working</option></select><p class="hint">Not sure? <a href="{{R}}tools/condition-grader/">Use the Condition Grader</a>.</p></div>
+    <div class="row"><div class="field"><label for="v-brand">Brand tier</label><select id="v-brand" name="brand"><option value="budget">Budget / unbranded</option><option value="main" selected>Mainstream</option><option value="premium">Premium</option><option value="iconic">Iconic / collectible</option></select></div>
+    <div class="field"><label for="v-dem">Demand right now</label><select id="v-dem" name="demand"><option value="low">Low / off-season</option><option value="normal" selected>Normal</option><option value="high">High / in season</option></select></div></div>
+    <fieldset class="field" style="border:0;padding:0"><legend style="font-weight:600;font-size:.92rem;margin-bottom:8px">Included</legend>
+      <label class="check"><input type="checkbox" name="extras" data-w="0.05"> Original box / packaging</label>
+      <label class="check"><input type="checkbox" name="extras" data-w="0.04"> All accessories, chargers, manuals</label>
+      <label class="check"><input type="checkbox" name="extras" data-w="0.03"> Receipt, warranty or certificate</label></fieldset>
+    <button class="btn btn-coral btn-block mt1" type="submit">Estimate value</button>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Estimated value</h2><div id="value-results"><div class="result-empty">Fill in the price when new and press <strong>Estimate value</strong>.</div></div></div>
+</div>
+{{AD}}
+<div class="layout mt3"><div class="prose">
+<h2>The model, in plain English</h2>
+<p>Every category loses value along a recognisable curve. Phones drop about a third in their first year as new models launch; mass-market furniture loses most of its value the day it leaves the store; good instruments and iconic designer pieces barely move. We encode that curve for each category as three numbers — first-year loss, yearly loss after that, and a floor — and show them with every result.</p>
+<p>Then we adjust for what buyers actually pay for:</p>
+<ul><li><strong>Condition</strong>: New 100%, Like new 90%, Excellent 80%, Good 68%, Fair 50%, Parts 20% of the age-adjusted value.</li><li><strong>Brand tier</strong>: budget −15%, premium +12%, iconic +25%.</li><li><strong>Demand</strong>: ±12% for season and hype.</li><li><strong>Completeness</strong>: up to +12% for box, accessories and proof of purchase.</li></ul>
+<p>The output range is ±12% around the middle. The list price adds 8% headroom for negotiation; the quick-sale price undercuts the low end to sell in days.</p>
+<h3>Always confirm with sold prices</h3>
+<p>Asking prices tell you what sellers hope for. Sold prices tell you what buyers paid. Search your exact model on a large marketplace, filter to sold or completed listings, and use the median of the last five as your anchor. Category price guides — like music-gear and collectibles price databases or car valuation guides — are even better where they exist.</p>
+{{FAQ}}
+</div><aside class="sidebar"><div class="side-card"><h4>Next steps</h4><ul><li><a href="{{R}}tools/fee-calculator/">💸 Payout after fees</a></li><li><a href="{{R}}tools/where-to-sell/">🧭 Where to sell</a></li><li><a href="{{R}}guides/how-to-price-used-items/">📘 How to price used items</a></li></ul></div>{{AD_SIDE}}</aside></div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>

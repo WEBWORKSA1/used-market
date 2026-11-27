@@ -1,0 +1,35 @@
+<!--
+{"path":"tools/listing-builder/","title":"Listing Title & Description Generator for eBay, Facebook, Mercari & More","description":"Write a searchable title that fits each platform's character limit and an honest, complete description buyers trust — in under a minute.","crumbs":[["Tools","tools/"]],"crumb":"Listing Builder","tool":"listing-builder","scripts":["tools/listing-builder.js"],"priority":"0.8","keywords":"listing title generator description template ebay facebook marketplace","faq":[["What makes a good listing title?","Brand, item type, model, the key spec buyers filter by (size, storage, colour) and condition — in that order. Skip words like 'wow' or 'L@@K'; buyers search for specifics."],["How long can titles be?","Limits differ: eBay, Mercari and Poshmark allow about 80 characters, Etsy 140, and some classifieds less. Pick your platform and the counter turns red when you go over."],["Should I mention flaws?","Yes. Listing flaws clearly with photos reduces returns, disputes and bad reviews, and buyers trust the rest of your description more."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Listing builder</h1><p class="lede">Fill in the facts once. Get a search-friendly title that fits your platform and an honest description buyers trust.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="lb-form" onsubmit="return false">
+    <h2>Item details</h2>
+    <div class="field"><label for="lb-p">Platform</label><select id="lb-p" name="platform"><option value="generic">Any platform</option><option value="ebay">eBay (80)</option><option value="facebook">Facebook Marketplace (100)</option><option value="mercari">Mercari (80)</option><option value="poshmark">Poshmark (80)</option><option value="etsy">Etsy (140)</option><option value="depop">Depop</option><option value="kijiji">Kijiji (64)</option><option value="craigslist">Craigslist (70)</option></select></div>
+    <div class="row"><div class="field"><label for="lb-b">Brand</label><input id="lb-b" name="brand" type="text" placeholder="e.g. Herman Miller"></div><div class="field"><label for="lb-i">Item / model</label><input id="lb-i" name="item" type="text" placeholder="e.g. Aeron Chair"></div></div>
+    <div class="row3"><div class="field"><label for="lb-s">Key spec</label><input id="lb-s" name="spec" type="text" placeholder="Size B, 256GB…"></div><div class="field"><label for="lb-c">Colour</label><input id="lb-c" name="color" type="text" placeholder="Graphite"></div><div class="field"><label for="lb-z">Size</label><input id="lb-z" name="size" type="text" placeholder="M, 10.5…"></div></div>
+    <div class="field"><label for="lb-cd">Condition</label><select id="lb-cd" name="condition"><option value="">Choose…</option><option value="nwt">New / sealed</option><option value="likenew">Like new</option><option value="excellent">Excellent</option><option value="good">Good</option><option value="fair">Fair</option><option value="parts">For parts</option></select></div>
+    <div class="field"><label for="lb-d">Details buyers care about</label><input id="lb-d" name="details" type="text" placeholder="Fully adjustable arms, lumbar pad, 2021 build"></div>
+    <div class="row"><div class="field"><label for="lb-in">What's included</label><input id="lb-in" name="includes" type="text" placeholder="Original box, manual"></div><div class="field"><label for="lb-df">Flaws</label><input id="lb-df" name="defects" type="text" placeholder="Small scuff on left arm"></div></div>
+    <div class="field"><label for="lb-r">Why you're selling (optional)</label><input id="lb-r" name="reason" type="text" placeholder="Moving to a smaller place"></div>
+    <div class="row"><div class="field"><label for="lb-pr">Price</label><input id="lb-pr" name="price" type="text" placeholder="$450"></div><div class="field"><label for="lb-dl">Delivery</label><select id="lb-dl" name="delivery"><option value="local">Local pickup</option><option value="ship">Shipping</option><option value="both">Both</option></select></div></div>
+    <label class="check"><input type="checkbox" name="obo" checked> Open to reasonable offers</label>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Your listing</h2>
+    <label>Title</label><div class="output-box" id="lb-title"></div><div class="counter" id="lb-count"></div>
+    <button class="btn btn-sm mt1" type="button" id="lb-copy-t">Copy title</button>
+    <label class="mt2">Description</label><div class="output-box" id="lb-desc" style="min-height:220px"></div>
+    <button class="btn btn-sm mt1" type="button" id="lb-copy-d">Copy description</button>
+    <div class="callout tip"><h4>Photo checklist</h4><p class="mb0 small">Daylight, plain background, 6–10 photos: front, back, sides, label/serial, every flaw close-up, and the item in use or powered on.</p></div>
+  </div>
+</div>
+{{AD}}
+<div class="prose narrow mt3">
+<h2>Why structured listings sell faster</h2>
+<p>Marketplace search engines match the words buyers type. Buyers type brand, model and the spec they filter by — not adjectives. A title like "Herman Miller Aeron Chair Size B Graphite Excellent" matches far more searches than "Amazing office chair!!!". The description then answers the questions buyers would otherwise message you about: condition, what's included, flaws and logistics.</p>
+<p>Honesty pays twice. Clear disclosure of flaws cuts "not as described" disputes — which on protected marketplaces can mean a refund and a return at your cost — and earns the reviews that make your next sale easier.</p>
+{{FAQ}}
+</div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>

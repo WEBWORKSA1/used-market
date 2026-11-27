@@ -1,0 +1,28 @@
+<!--
+{"path":"tools/inspection-checklists/","title":"Used Item Inspection Checklists (Phones, Cars, Furniture & More)","description":"Interactive, printable inspection checklists for 14 categories of used goods, with must-pass checks that tell you when not to pay. Saved on your device.","crumbs":[["Tools","tools/"]],"crumb":"Inspection Checklists","tool":"inspection-checklists","scripts":["tools/checklists.js"],"priority":"0.8","keywords":"used inspection checklist buying used phone car furniture","faq":[["Where is my progress saved?","On your device only (browser storage). Nothing is sent to us. Use Reset to start fresh for the next item."],["What does 'must pass' mean?","It's a deal-breaker check — locked phones, salvage titles, recalled baby gear, stolen bikes. If any must-pass item fails, don't pay. Condition checks below that are for negotiating."],["Can I print a checklist?","Yes. Press Print to get a clean, ad-free copy to take with you."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Inspection checklists</h1><p class="lede">Tick through the checks the pros use before paying for anything used. Must-pass items tell you when to walk away.</p></div></section>
+<section style="padding-top:0"><div class="container" id="cl-app">
+<div class="tool-shell">
+  <div class="panel">
+    <div class="field"><label for="cl-cat">Choose the item</label><select id="cl-cat" name="category"></select></div>
+    <h2 id="cl-title" class="mt2">Checklist</h2>
+    <div class="progress" id="cl-progress" aria-hidden="true"><i style="width:0"></i></div>
+    <div id="cl-status" class="flag" role="status"></div>
+    <div id="cl-list" class="mt1"></div>
+    <div class="chips mt2 no-print"><button class="btn btn-sm" type="button" id="cl-print">🖨 Print</button><button class="btn btn-sm btn-ghost" type="button" id="cl-reset">Reset</button></div>
+  </div>
+  <div class="panel"><h2>Red flags for this category</h2><ul id="cl-flags"></ul>
+    <div class="callout tip"><h4>Before you go</h4><ul class="mb0"><li>Search the model in the <a href="{{R}}tools/recall-check/">Recall Checker</a>.</li><li>Run the seller's messages through the <a href="{{R}}tools/scam-checker/">Scam Checker</a>.</li><li>Pick a safe spot and payment with the <a href="{{R}}tools/meetup-planner/">Meetup Planner</a>.</li></ul></div>
+    <div class="no-print">{{AD_SIDE}}</div>
+  </div>
+</div>
+{{AD}}
+<div class="prose narrow mt3">
+<h2>How to use a checklist without annoying the seller</h2>
+<p>Tell the seller up front that you'll take ten minutes to check the item. Serious sellers expect it — and the ones who refuse are telling you something. Bring what you need (a charger, a SIM card, a light, a tape measure), work through the must-pass checks first, and only then move to condition details.</p>
+<p>Use the condition findings to negotiate politely: "The battery is at 78%, which means a replacement soon — would you take $40 less?" is a fair, specific ask. If a must-pass check fails, don't negotiate. Walk away.</p>
+{{FAQ}}
+</div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>

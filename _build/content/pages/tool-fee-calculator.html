@@ -1,0 +1,35 @@
+<!--
+{"path":"tools/fee-calculator/","title":"Selling Fee Calculator: eBay vs Mercari vs Poshmark vs Depop & More","description":"Compare your net payout and profit after fees on eBay, Mercari, Poshmark, Depop, Vinted, Etsy, Whatnot, Grailed, Swappa, Reverb and local apps — side by side.","crumbs":[["Tools","tools/"]],"crumb":"Fee & Payout Calculator","tool":"fee-calculator","scripts":["tools/fee-calculator.js"],"priority":"0.9","keywords":"fee calculator ebay mercari poshmark depop fees net payout","faq":[["Which selling platform has the lowest fees?","For sellers, Vinted (buyer pays the protection fee) and local pickup on Facebook Marketplace, OfferUp, Kijiji or Craigslist charge nothing. Among shipped marketplaces, Depop's US/UK model (no commission, payment processing only) is among the cheapest. Poshmark's 20% is the highest of the big fashion apps."],["Do platforms charge fees on shipping?","Some do. eBay, Mercari, Etsy, Grailed, Reverb and Facebook's shipped orders calculate their percentage on the total including shipping charged to the buyer. The calculator applies that automatically."],["Why is my eBay fee different?","eBay's final value fee varies by category and seller level, and store subscriptions lower it. We use the most common rate (about 13.6% plus $0.40 per order). Enter your own rate in the custom row to model your exact case."],["How current are these fees?","Each platform shows when its fee was checked. Fees marked 'approx.' have published structures that vary by country or plan. Always confirm on the platform's own fee page before relying on a number."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Fee &amp; payout calculator</h1><p class="lede">See exactly what you keep — and your real profit — after seller and payment-processing fees on 15+ platforms, side by side.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="fee-form">
+    <h2>Your sale</h2>
+    <div class="row"><div class="field"><label for="f-price">Sale price ($)</label><input id="f-price" name="price" type="number" min="0" step="0.01" value="100"></div>
+    <div class="field"><label for="f-cost">What you paid for it ($)</label><input id="f-cost" name="item_cost" type="number" min="0" step="0.01" value="0"><p class="hint">For profit; 0 if it was yours.</p></div></div>
+    <div class="row"><div class="field"><label for="f-sc">Shipping charged to buyer ($)</label><input id="f-sc" name="ship_charged" type="number" min="0" step="0.01" value="0"></div>
+    <div class="field"><label for="f-sk">Your actual shipping cost ($)</label><input id="f-sk" name="ship_cost" type="number" min="0" step="0.01" value="0"></div></div>
+    <p class="hint">Local-pickup platforms ignore shipping automatically.</p>
+    <h3 class="mt2" style="font-size:1.05rem">Add your own platform (optional)</h3>
+    <div class="row"><div class="field"><label for="f-cp">Fee %</label><input id="f-cp" name="custom_pct" type="number" min="0" step="0.1" placeholder="e.g. 12.5"></div><div class="field"><label for="f-cf">Fixed fee ($)</label><input id="f-cf" name="custom_fixed" type="number" min="0" step="0.01" placeholder="e.g. 0.30"></div></div>
+    <div id="fee-best" class="callout tip"></div>
+    <a class="btn btn-coral btn-block" id="fee-lead" href="{{R}}sell/">Skip the fees — get offers</a>
+  </form>
+  <div class="panel" aria-live="polite"><h2>What you keep</h2>
+    <div class="table-wrap"><table><thead><tr><th>Platform</th><th class="num">Fees</th><th class="num">You keep</th><th class="num">Profit</th><th class="num">Margin</th></tr></thead><tbody id="fee-results"></tbody></table></div>
+    <p class="small muted mt1">Fee data checked <span id="fee-asof"></span>. Approximate where marked. Taxes, promoted-listing and optional boost fees excluded.</p>
+  </div>
+</div>
+{{AD}}
+<div class="layout mt3"><div class="prose">
+<h2>How each platform charges</h2>
+<p>Marketplace fees come in three shapes, and knowing which one you're dealing with matters more than the headline percentage.</p>
+<ul><li><strong>Seller commission</strong> — a percentage of the sale (sometimes including shipping) plus a small fixed fee. eBay, Mercari, Poshmark, Etsy, Grailed, Whatnot and Reverb work this way.</li><li><strong>Processing only</strong> — no commission, just card processing. Depop's U.S. and U.K. model is the best-known example.</li><li><strong>Buyer pays</strong> — sellers keep 100% and the buyer pays a protection fee at checkout, as on Vinted. Your price has to absorb that in buyers' minds.</li></ul>
+<h3>Cheapest isn't always best</h3>
+<p>A platform that charges 20% but sells your jacket in two days at full price can beat a 0% app where it sits for two months and sells for 40% less. Pair this calculator with the <a href="{{R}}tools/where-to-sell/">Where-to-Sell Router</a>, which weighs speed and audience as well as fees.</p>
+<div class="callout warn"><h4>Before you rely on a number</h4><p class="mb0">Fees change, vary by category and country, and some platforms add fees for promoted listings, currency conversion or instant payouts. We date every figure; confirm on the platform's fee page before you list.</p></div>
+{{FAQ}}
+</div><aside class="sidebar"><div class="side-card"><h4>Related</h4><ul><li><a href="{{R}}guides/marketplace-fees-explained/">📘 Marketplace fees explained</a></li><li><a href="{{R}}tools/where-to-sell/">🧭 Where-to-Sell Router</a></li><li><a href="{{R}}guides/reselling-taxes-1099k/">📘 Resale income &amp; 1099-K</a></li></ul></div>{{AD_SIDE}}</aside></div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>

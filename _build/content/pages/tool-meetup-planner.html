@@ -1,0 +1,24 @@
+<!--
+{"path":"tools/meetup-planner/","title":"Safe Meetup & Payment Planner for Marketplace Deals","description":"Get the safest payment method, meeting place and checklist for your marketplace deal based on its value and type — phones, cars, furniture and more.","crumbs":[["Tools","tools/"]],"crumb":"Safe Meetup & Payment Planner","tool":"meetup-planner","scripts":["tools/meetup-planner.js"],"priority":"0.8","keywords":"safe meetup marketplace safest way to pay private sale","faq":[["What is the safest way to get paid in a private sale?","For small amounts, cash counted on the spot. For larger amounts, money that is visibly confirmed in your own bank account before the item changes hands — ideally at a bank branch. Use the platform's checkout when it offers protection."],["Are police-station exchange zones real?","Many police departments designate parking spaces or lobbies with cameras for online-sale meetups. Search your city's police website for 'safe exchange zone'."],["Is Zelle, Venmo or Cash App safe for marketplace deals?","They work like cash: fast and usually irreversible, with little protection when you pay a stranger. Only pay in person after inspecting, and as a seller only release the item once the money shows in your own app — never because of an email."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Safe meetup &amp; payment planner</h1><p class="lede">Tell us the deal. Get the safest way to pay or get paid, where to meet, and what to bring.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="mp-form">
+    <h2>Your deal</h2>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 16px"><legend style="font-weight:600;font-size:.92rem;margin-bottom:8px">I am the…</legend><div class="seg"><label><input type="radio" name="role" value="buyer" checked><span>🛒 Buyer</span></label><label><input type="radio" name="role" value="seller"><span>💰 Seller</span></label></div></fieldset>
+    <div class="row"><div class="field"><label for="mp-v">Deal value ($)</label><input id="mp-v" name="value" type="number" min="0" placeholder="e.g. 600"></div>
+    <div class="field"><label for="mp-k">Item type</label><select id="mp-k" name="kind"><option value="phone">Phone / electronics</option><option value="large">Large item (furniture, appliance)</option><option value="car">Car / vehicle</option><option value="small">Other small item</option></select></div></div>
+    <button class="btn btn-coral btn-block" type="submit">Build my safety plan</button>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Your plan</h2><div id="mp-results"><div class="result-empty">Enter the value and item type.</div></div></div>
+</div>
+{{AD}}
+<div class="prose narrow mt3">
+<h2>The principles behind the plan</h2>
+<p>Every serious marketplace safety guide boils down to the same few rules: deal locally and face-to-face where you can, keep conversations and payments on the platform, never pay or accept payment before meeting unless the platform protects it, and meet somewhere public. The planner turns those rules into a concrete plan that scales with the money at stake.</p>
+<h3>Why the payment advice changes with value</h3>
+<p>Under a couple of hundred dollars, counterfeit-cash risk is small and convenience wins. As value rises, so does the incentive to fake payments — so the plan moves you toward methods you can verify yourself, in your own banking app or at a bank counter, before anything changes hands.</p>
+{{FAQ}}
+</div>
+</div></section>

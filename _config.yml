@@ -1,0 +1,11 @@
+# GitHub Pages: static output is committed; Jekyll only copies files.
+title: Used.Market
+exclude:
+  - _build
+  - README.md
+  - PROMPT.md
+  - RESEARCH.md
+  - DEPLOY.md
+  - .github
+include:
+  - .well-known

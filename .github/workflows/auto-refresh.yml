@@ -1,0 +1,51 @@
+name: Auto-refresh (recalls, news, sitemap)
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # daily, 09:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/recalls.json"
+      - "data/news.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch recalls and headlines
+        run: python _build/refresh.py
+
+      - name: Rebuild site
+        run: python _build/build.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "used-market-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Auto-refresh: recalls, news and sitemap ($(date -u +%Y-%m-%d))"
+            git push origin HEAD:main
+          fi
+
+      - name: Mirror main to gh-pages (keeps either Pages source current)
+        run: git push --force origin HEAD:gh-pages

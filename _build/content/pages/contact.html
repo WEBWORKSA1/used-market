@@ -1,0 +1,16 @@
+<!--
+{"path":"contact/","title":"Contact Used.Market","description":"Send us a question, a correction, a scam pattern to add, or a partnership idea. We reply within two business days.","crumbs":[],"crumb":"Contact","priority":"0.5"}
+-->
+<div class="container" style="padding-top:36px;padding-bottom:60px">{{CRUMBS}}
+<div class="two" style="align-items:start">
+  <div class="prose"><h1>Contact us</h1><p>We read everything. Typical reply time: two business days.</p>
+    <ul><li><strong>Selling something?</strong> The fastest route is <a href="{{R}}sell/">Get Offers</a>.</li><li><strong>Advertising, sponsorship or partnership?</strong> See <a href="{{R}}partners/">Partners</a>.</li><li><strong>Outdated fee or broken link?</strong> Tell us below — corrections are our top priority.</li><li><strong>Lost money to a scam?</strong> Contact your bank immediately, then report it to the platform and your national fraud agency. See the <a href="{{R}}tools/scam-checker/">Scam Checker</a> for links.</li></ul>
+    <p class="small muted">We can't mediate disputes between buyers and sellers or recover payments; please contact the platform you used.</p></div>
+  <form class="panel js-form" data-kind="contact" data-subject="Used.Market — Contact form" data-success="Thanks! We'll reply within two business days.">
+    <div class="row"><div class="field"><label for="ct-name">Name</label><input id="ct-name" name="name" type="text" required></div><div class="field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" required></div></div>
+    <div class="field"><label for="ct-topic">Topic</label><select id="ct-topic" name="topic" required><option value="">Choose…</option><option>General question</option><option>Correction (fee, policy, link)</option><option>Suggest a scam pattern</option><option>Suggest a platform for the directory</option><option>Advertising / sponsorship</option><option>Partnership</option><option>Website / domain acquisition</option><option>Press</option><option>Privacy request</option></select></div>
+    <div class="field"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" rows="7" required></textarea></div>
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn btn-coral" type="submit">Send message</button>
+  </form>
+</div></div>

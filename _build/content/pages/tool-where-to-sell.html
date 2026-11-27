@@ -1,0 +1,37 @@
+<!--
+{"path":"tools/where-to-sell/","title":"Where Should I Sell It? Free Where-to-Sell Router","description":"Tell us the item, value and what matters most — speed, price or effort — and get a ranked list of the best places to sell it, with estimated payout.","crumbs":[["Tools","tools/"]],"crumb":"Where-to-Sell Router","tool":"where-to-sell","scripts":["tools/where-to-sell.js"],"priority":"0.9","keywords":"where to sell best place to sell used","faq":[["What is the best place to sell used items?","There isn't one best place — it depends on the item. Phones sell well on tech-specific marketplaces or instant buyback, furniture sells best locally or through managed delivery marketplaces, designer goods do best where items are authenticated, and low-value items often aren't worth shipping at all. The Router weighs these trade-offs for you."],["How does the ranking work?","Each platform is scored on speed, typical price realised, effort required and a trust score (identity checks, on-platform payment, protection and records). Your priority changes the weights, and rules adjust for value (for example, verified payment matters more above $1,000) and category (authentication for luxury, local pickup for bulky items)."],["Is any platform paying to rank higher?","No. Rankings come from published fees and features. Sponsored placements, if we sell any, are labelled and never change tool results."],["What does 'est. payout after fees' mean?","For platforms with published fee formulas we subtract the seller and processing fees from your value. For instant-offer and consignment services we show a typical range midpoint, which can be higher or lower for your item."]]}
+-->
+<section class="hero" style="padding-bottom:20px"><div class="container">{{CRUMBS}}<span class="tag">Free tool</span><h1 class="mt1">Where should I sell it?</h1><p class="lede">Get a ranked shortlist of the best platforms for your item, value and region — weighted by what matters to you: speed, price or effort.</p></div></section>
+<section style="padding-top:0"><div class="container">
+<div class="tool-shell">
+  <form class="panel" id="router-form">
+    <h2>Your item</h2>
+    <div class="field"><label for="r-cat">Category</label><select id="r-cat" name="category" required></select></div>
+    <div class="row"><div class="field"><label for="r-val">Approximate value ($)</label><input id="r-val" name="value" type="number" min="0" step="1" placeholder="e.g. 250"></div>
+    <div class="field"><label for="r-reg">Where are you?</label><select id="r-reg" name="region"><option value="US">United States</option><option value="CA">Canada</option><option value="UK">United Kingdom</option><option value="EU">European Union</option><option value="IN">India</option><option value="AU">Australia</option><option value="NZ">New Zealand</option><option value="SG">Singapore</option><option value="MY">Malaysia</option><option value="PH">Philippines</option><option value="ES">Spain</option><option value="FR">France</option><option value="DE">Germany</option><option value="NL">Netherlands</option></select></div></div>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 16px"><legend style="font-weight:600;font-size:.92rem;margin-bottom:8px">What matters most?</legend><div class="seg">
+      <label><input type="radio" name="priority" value="balance" checked><span>⚖️ Balanced</span></label>
+      <label><input type="radio" name="priority" value="price"><span>💰 Most money</span></label>
+      <label><input type="radio" name="priority" value="speed"><span>⚡ Fastest</span></label>
+      <label><input type="radio" name="priority" value="effort"><span>🛋️ Least effort</span></label></div></fieldset>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 16px"><legend style="font-weight:600;font-size:.92rem;margin-bottom:8px">Local or shipping?</legend><div class="seg">
+      <label><input type="radio" name="mode" value="either" checked><span>Either</span></label>
+      <label><input type="radio" name="mode" value="local"><span>📍 Local pickup only</span></label>
+      <label><input type="radio" name="mode" value="ship"><span>📦 Happy to ship</span></label></div></fieldset>
+    <button class="btn btn-coral btn-block" type="submit">Rank my options</button>
+    <p class="hint">No sign-up. Nothing you enter leaves your browser.</p>
+  </form>
+  <div class="panel" aria-live="polite"><h2>Your best options</h2><div id="router-results"><div class="result-empty">Choose a category and press <strong>Rank my options</strong>.</div></div><div id="router-resources" class="small mt2"></div></div>
+</div>
+{{AD}}
+<div class="layout mt3"><div class="prose">
+<h2>How the Router decides</h2>
+<p>Most "where to sell" advice is written by a platform about itself. The Router is neutral: it scores every platform in our <a href="{{R}}marketplaces/">directory</a> that serves your category and region on four things that actually determine your outcome.</p>
+<ul><li><strong>Speed</strong> — how quickly typical listings in that category sell or how fast an instant offer pays.</li><li><strong>Price realised</strong> — whether the audience pays close to full market value or expects a bargain.</li><li><strong>Effort</strong> — photos, messages, meetups and shipping versus "they handle everything".</li><li><strong>Trust</strong> — on-platform payment, identity checks, buyer/seller protection and transaction records.</li></ul>
+<p>Your priority changes how those four are weighted. Then a few common-sense rules kick in: below about $30, local pickup beats shipping because postage eats the margin; above $1,000, platforms without protected payment drop; designer goods favour places that authenticate; bulky furniture favours local or managed delivery.</p>
+<h3>Read the payout column correctly</h3>
+<p>For marketplaces with published formulas, we subtract seller and processing fees from your value. For instant buyback and car-offer services we show the midpoint of a typical offer range, and for consignment the midpoint of a typical consignor share. Treat those as starting points, then get real quotes.</p>
+{{FAQ}}
+</div><aside class="sidebar"><div class="side-card"><h4>Next steps</h4><ul><li><a href="{{R}}tools/fee-calculator/">💸 Compare exact payouts</a></li><li><a href="{{R}}tools/value-estimator/">🏷️ Estimate the value</a></li><li><a href="{{R}}tools/listing-builder/">✍️ Write the listing</a></li><li><a href="{{R}}guides/where-to-sell-anything/">📘 Where to sell anything (guide)</a></li></ul></div>{{AD_SIDE}}</aside></div>
+<div class="mt3">{{LEAD}}</div>
+</div></section>
